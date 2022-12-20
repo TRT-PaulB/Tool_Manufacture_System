@@ -3,10 +3,12 @@ package uk.co.example.qualityservicebackend.service;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.http.HttpStatus;
+import org.springframework.stereotype.Service;
 
 import java.util.HashMap;
 import java.util.Map;
 
+@Service
 public class QualityBuildService {
     public static final Logger log = LoggerFactory.getLogger(QualityBuildService.class);
 

@@ -8,6 +8,7 @@ class QualityServiceBackendApplicationTests {
 
 	@Test
 	void contextLoads() {
+
 	}
 
 }
