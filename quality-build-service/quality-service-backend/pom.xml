@@ -42,13 +42,22 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-actuator</artifactId>
 		</dependency>
-	</dependencies>
+        <dependency>
+            <groupId>co.uk.example.quality</groupId>
+            <artifactId>common</artifactId>
+            <version>0.0.1-SNAPSHOT</version>
+            <scope>compile</scope>
+        </dependency>
+    </dependencies>
 
 	<build>
 		<plugins>
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
+				<configuration>
+					<mainClass>uk.co.example.qualityservicebackend.QualityServiceBackendApplication</mainClass>
+				</configuration>
 			</plugin>
 		</plugins>
 	</build>

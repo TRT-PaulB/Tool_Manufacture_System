@@ -19,6 +19,7 @@
 
     <modules>
         <module>quality-service-backend</module>
+        <module>common</module>
     </modules>
 
 </project>

@@ -26,6 +26,7 @@ public class QualityBuildController {
     @GetMapping(value = "/healthCheck", produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<Map<String, String>> getHealthDetails() {
         var statusMap = qualityBuildService.healthCheck();
+        log.info("quality up and running");
         return new ResponseEntity<>(statusMap, HttpStatus.OK);
     }
 
