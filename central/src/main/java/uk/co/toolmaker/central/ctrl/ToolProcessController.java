@@ -5,6 +5,8 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import uk.co.toolmaker.central.dm.ProcessRecord;
 import uk.co.toolmaker.central.dm.ProcessResponse;
+import uk.co.toolmaker.central.ex.BadIdeaException;
+
 import java.time.LocalDateTime;
 
 @RestController
@@ -23,7 +25,7 @@ public class ToolProcessController {
     @GetMapping("/retrieve/id/{id}")
     ProcessResponse retrieveById(@PathVariable("id") final int processRecordId) {
         logger.info("getting results for id: " + processRecordId);
-        var result = new ProcessRecord(48, "returning in own block", LocalDateTime.now());
+        var result = new ProcessRecord(48, "returning some message", LocalDateTime.now());
         return new ProcessResponse().addRecord(result);
     }
 
@@ -50,6 +52,11 @@ public class ToolProcessController {
     @DeleteMapping("/delete/{id}")
     ResponseEntity<ProcessRecord> deleteReading(@PathVariable("id") final int recordId) {
         logger.info("deleting process record with id: " + recordId);
+
+        if (recordId == 47) {
+            throw new BadIdeaException("don't supply id 47!");
+        }
+
         var processRecord = new ProcessRecord(48, "", null);
         processRecord.setDeletionTime(LocalDateTime.now());
         return ResponseEntity.ok().body(processRecord);

@@ -13,5 +13,11 @@ public class ProcessResponse {
         return this;
     }
 
+    public ProcessRecord getProcessRecord() {
+        return processRecord;
+    }
 
+    public void setProcessRecord(ProcessRecord processRecord) {
+        this.processRecord = processRecord;
+    }
 }
