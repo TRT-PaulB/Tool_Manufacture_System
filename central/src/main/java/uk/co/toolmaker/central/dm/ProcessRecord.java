@@ -9,6 +9,8 @@ public class ProcessRecord {
     private String remarks;
     private LocalDateTime submissionTime;
 
+    private LocalDateTime deletionTime;
+
 
     public ProcessRecord(int id, String remarks, LocalDateTime submissionTime) {
         this.id = id;
@@ -34,6 +36,14 @@ public class ProcessRecord {
 
     public LocalDateTime getSubmissionTime() {
         return submissionTime;
+    }
+
+    public LocalDateTime getDeletionTime() {
+        return deletionTime;
+    }
+
+    public void setDeletionTime(LocalDateTime deletionTime) {
+        this.deletionTime = deletionTime;
     }
 
     public void setSubmissionTime(LocalDateTime submissionTime) {

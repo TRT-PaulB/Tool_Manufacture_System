@@ -7,7 +7,12 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 public class ToolManufactureEngineApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(ToolManufactureEngineApplication.class, args);
+
+		try {
+			SpringApplication.run(ToolManufactureEngineApplication.class, args);
+		} catch(Throwable ex) {
+			ex.printStackTrace();
+		}
 	}
 
 }
